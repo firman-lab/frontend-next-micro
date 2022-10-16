@@ -1,50 +1,48 @@
-import { Popover, Transition } from '@headlessui/react'
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import { Fragment } from 'react'
+import { Popover, Transition } from "@headlessui/react";
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import { Fragment } from "react";
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Contact', href: '#' },
-  { name: 'About', href: '#' },
+  { name: "Product", href: "#" },
+  { name: "Features", href: "#" },
+  { name: "Contact", href: "#" },
+  { name: "About", href: "#" },
 ];
 const Solutions = [
-  { name: 'Tax Object', href: '#' },
-  { name: 'Estimate Tax', href: '#' },
-  { name: 'Highly accurate', href: '#' },
-  { name: 'Much better', href: '#' },
+  { name: "Tax Object", href: "#" },
+  { name: "Estimate Tax", href: "#" },
+  { name: "Highly accurate", href: "#" },
+  { name: "Much better", href: "#" },
 ];
 
 const features = [
-
-
   {
-    name: 'Faster over the rainbow',
+    name: "Faster over the rainbow",
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
     icon: "bolt",
   },
   {
-    name: 'Less Touch, No Brain',
+    name: "Less Touch, No Brain",
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
     icon: "click",
   },
   {
-    name: 'High accuracy',
+    name: "High accuracy",
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
     icon: "cpu",
   },
   {
-    name: 'More sat-set than you',
+    name: "More sat-set than you",
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
     icon: "cubeless",
   },
-]
+];
 
 const Home: NextPage = () => {
   return (
@@ -105,7 +103,9 @@ const Home: NextPage = () => {
                         {item.name}
                       </a>
                     ))}
-                    <a className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <a
+                    href="/login" 
+                    className="font-semibold text-indigo-600 hover:text-indigo-500">
                       Log in
                     </a>
                   </div>
@@ -157,7 +157,8 @@ const Home: NextPage = () => {
                       ))}
                     </div>
                     <a
-                      href="#"
+                      type="button"
+                      href="/login"
                       className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100"
                     >
                       Log in
@@ -217,8 +218,8 @@ const Home: NextPage = () => {
               A better way to finish your work
             </p>
             <p className="mt-4 max-w-4xl text-xl text-gray-500 lg:mx-auto">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-              accusamus quisquam.
+              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
+              magnam voluptatum cupiditate veritatis in accusamus quisquam.
             </p>
           </div>
           <div className="mt-10">
@@ -227,11 +228,19 @@ const Home: NextPage = () => {
                 <div key={feature.name} className="relative">
                   <dt>
                     <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500">
-                      <img className="h-6 w-6 border-white" aria-hidden={true} src={`../icons/${feature.icon}.svg`} />
+                      <img
+                        className="h-6 w-6 border-white"
+                        aria-hidden={true}
+                        src={`../icons/${feature.icon}.svg`}
+                      />
                     </div>
-                    <p className="ml-16 text-lg font-medium leading-6 text-gray-900">{feature.name}</p>
+                    <p className="ml-16 text-lg font-medium leading-6 text-gray-900">
+                      {feature.name}
+                    </p>
                   </dt>
-                  <dd className="mt-2 ml-16 text-base text-gray-500">{feature.description}</dd>
+                  <dd className="mt-2 ml-16 text-base text-gray-500">
+                    {feature.description}
+                  </dd>
                 </div>
               ))}
             </dl>
@@ -242,14 +251,26 @@ const Home: NextPage = () => {
         <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             <span className="block">Ready to dive in?</span>
-            <span className="block text-indigo-600">Prepare your data now!</span>
+            <span className="block text-indigo-600">
+              Prepare your data now!
+            </span>
           </h2>
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">
-              <a href="#" className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700">Get Started</a>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
+              >
+                Get Started
+              </a>
             </div>
             <div className="ml-3 inline-flex rounded-md shadow">
-              <a href="#" className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-700">Learn more</a>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-700"
+              >
+                Learn more
+              </a>
             </div>
           </div>
         </div>
@@ -259,14 +280,19 @@ const Home: NextPage = () => {
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             <div className="p-5 max-w-sm">
               <img src="../icons/logo.svg" alt="logo" />
-              <p className="font-normal text-gray-400 mt-4">Save your time, increase your wallet frequently. Start your day better.</p>
+              <p className="font-normal text-gray-400 mt-4">
+                Save your time, increase your wallet frequently. Start your day
+                better.
+              </p>
             </div>
             <div className="p-5 max-w-sm">
               <h5 className="font-semibold text-gray-400">Solutions</h5>
               <ul className="font-normal text-gray-500">
                 {Solutions.map((item) => (
                   <li className="mb-4 mt-4" key={item.name}>
-                    <a href="#" className="hover:underline">{item.name}</a>
+                    <a href="#" className="hover:underline">
+                      {item.name}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -276,7 +302,9 @@ const Home: NextPage = () => {
               <ul className="font-normal text-gray-500">
                 {Solutions.map((item) => (
                   <li className="mb-4 mt-4" key={item.name}>
-                    <a href="#" className="hover:underline">{item.name}</a>
+                    <a href="#" className="hover:underline">
+                      {item.name}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -286,18 +314,22 @@ const Home: NextPage = () => {
               <ul className="font-normal text-gray-500">
                 {Solutions.map((item) => (
                   <li className="mb-4 mt-4" key={item.name}>
-                    <a href="#" className="hover:underline">{item.name}</a>
+                    <a href="#" className="hover:underline">
+                      {item.name}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          <hr className=" mt-8 border-gray-500"/>
-          <p className="mt-8 text-center font-medium text-gray-500">Copyright 2022. All Right Reserved.</p>
+          <hr className=" mt-8 border-gray-500" />
+          <p className="mt-8 text-center font-medium text-gray-500">
+            Copyright 2022. All Right Reserved.
+          </p>
         </div>
       </footer>
     </>
   );
-}
+};
 
-export default Home
+export default Home;
