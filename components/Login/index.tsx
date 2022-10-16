@@ -17,7 +17,7 @@ export default function Login() {
               name="email"
               type="email"
               onChange={() => {}}
-              className="bg-white focus:outline-none border w-full px-6 py-3 border-gray-600 focus:border-teal-500"
+              className="bg-white focus:outline-none border w-full px-6 py-3 border-gray-600 focus:border-indigo-600"
             //   value={}
               placeholder="Your email addres"
             />
@@ -31,7 +31,7 @@ export default function Login() {
               name="password"
               type="password"
               onChange={() => {}}
-              className="bg-white focus:outline-none border px-6 py-3 w-full border-gray-600 focus:border-teal-500"
+              className="bg-white focus:outline-none border px-6 py-3 w-full border-gray-600 focus:border-indigo-600"
             //   value={}
               placeholder="Your password addres"
             />
@@ -39,19 +39,19 @@ export default function Login() {
 
           <button
             type="submit"
-            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+            className="bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full font-semibold"
           >
-            Masuk
+            Log in
           </button>
         </form>
       </div>
 
       <div className="w-2/12 hidden sm:block"></div>
 
-      <div className="w-5/12 hidden sm:block justify-end pt-24 pr-16">
-        <div className="relative" style={{ width: 369, height: 440 }}>
+      <div className="w-5/12 hidden sm:block md:w-justify-end pt-24 pr-16">
+        <div className="relative md:block" style={{ width: 369, height: 440 }}>
           <div
-            className="absolute border-indigo-700 border-2 -mt-8 -ml-16 left-0"
+            className="absolute border-indigo-700 border-2 -mt-8 -ml-16 left-0 md:block"
             style={{ width: 324, height: 374 }}
           ></div>
           <div className="absolute w-full h-full -mb-8 -ml-8">
