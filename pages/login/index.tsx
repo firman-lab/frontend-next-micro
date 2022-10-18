@@ -6,7 +6,7 @@ export default function index() {
   return (
     <>
       <section className="container mx-auto">
-        <Header title="Daftar" href="#"/>
+        <Header title="Sign up" href="#"/>
       </section>
       <section className="container mx-auto pt-10 px-4">
         <Login />

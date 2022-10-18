@@ -5,7 +5,7 @@ import { resolveHref } from "next/dist/shared/lib/router/router";
 
 
 const navigation = [
-    { name: "Product", href: "#" },
+    { name: "Product", href: "#product" },
     { name: "Features", href: "#" },
     { name: "Contact", href: "#" },
     { name: "About", href: "#" },
@@ -27,7 +27,7 @@ export default function Header(props : HeaderProps) {
         >
           <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
             <div className="flex w-full items-center justify-between md:w-auto">
-              <a href="#">
+              <a href="/">
                 <span className="sr-only">Fist Mousea</span>
                 <img
                   alt="Fist Mousea"
