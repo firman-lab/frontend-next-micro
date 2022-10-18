@@ -1,14 +1,13 @@
 import { Popover, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 import Image from "next/image";
-import { resolveHref } from "next/dist/shared/lib/router/router";
 
 
 const navigation = [
     { name: "Product", href: "#product" },
-    { name: "Features", href: "#" },
-    { name: "Contact", href: "#" },
-    { name: "About", href: "#" },
+    { name: "Features", href: "#features" },
+    { name: "Contact", href: "#contact" },
+    { name: "About", href: "#about" },
   ];
 
   interface HeaderProps {

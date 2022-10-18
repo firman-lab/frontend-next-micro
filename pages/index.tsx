@@ -45,6 +45,10 @@ const features = [
   },
 ];
 
+const brandClient = [
+ "amazon", "ms", "tesla", "google", "fb",
+]
+
 const Home: NextPage = () => {
   return (
     <>
@@ -106,7 +110,16 @@ const Home: NextPage = () => {
           />
         </div>
       </div>
-      <section className="py-12 mt-10" id="features">
+      <section className="py-12 mt-10">
+        <div className="flex flex-wrap justify-center items-center"> 
+        {brandClient.map((item) => (
+          <div className="mb-8 md:mb-0 mx-auto">
+            <Image className="mx-auto" width={150} height={32} src={`/images/${item}.png`}/>
+          </div>
+        ))}
+        </div>
+      </section>
+      <section className="py-12" id="features">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="text-lg font-semibold text-indigo-600">
@@ -221,8 +234,8 @@ const Home: NextPage = () => {
             </div>
           </div>
           <hr className=" mt-8 border-gray-500" />
-          <p className="mt-8 text-center font-medium text-gray-500">
-            Copyright 2022. All Right Reserved.
+          <p className="mx-2 mt-8 text-center font-medium text-gray-500">
+            Copyright 2022. FirmaN Studio. <br/>All right reserved.
           </p>
         </div>
       </footer>
