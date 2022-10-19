@@ -66,9 +66,9 @@ export default function Login() {
             style={{ width: 290 }}
           >
             <p className="text-gray-900 mb-2">
-              Metode belajar yang santai seperti nonton drakor di Netflix
+              Support analisa pajak lebih cepat dengan AI yang kerenn..
             </p>
-            <span className="text-gray-600">Alyssa, Apps Developer</span>
+            <span className="text-gray-600">Yaya, Tax Reviewer</span>
           </div>
         </div>
       </div>
