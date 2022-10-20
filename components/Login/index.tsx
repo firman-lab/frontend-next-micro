@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Login() {
@@ -37,12 +38,14 @@ export default function Login() {
             />
           </div>
 
-          <button
-            type="submit"
-            className="bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full font-semibold rounded-md"
-          >
-            Log in
-          </button>
+          <Link href="/member">
+            <button
+              type="submit"
+              className="bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full font-semibold rounded-md"
+            >
+              Log in
+            </button>
+          </Link>
         </form>
       </div>
 
