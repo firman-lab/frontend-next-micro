@@ -8,15 +8,15 @@ export default function Sidebar() {
       <div className="h-19.5">
         {/* <Image className='absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer text-slate-400 xl:hidden' src="/icons/close.svg" height={24} width={24}/> */}
         <a href="#" className='flex items-center justify-center space-x-1 rounded-md px-2 py-5'>
-          <Image className='inline transition-all duration-200 text-indigo-700 ease-nav-brand max-h-8' alt='main-logo' src="/icons/ghost.svg" height={24} width={24}/>
-          <span className='ml-1 font-semibold transition-all duration-200 ease-nav-brand'>FIST OU</span>
+          <Image className='inline transition-all duration-200 text-indigo-700 ease-nav-brand max-h-8' alt='main-logo' src="/images/kemenhan.png" height={85} width={85}/>
+          <span className='ml-1 font-bold transition-all duration-200 text-3xl'>Fast</span>
         </a>
       </div>
       <hr className='h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent' />
 
-      <Link href={'/hr'} className="hover:bg-indigo-600">
-        <a className='flex justify-start items-center px-4 py-3 rounded-md hover:bg-indigo-500 hover:text-gray-100'>
-          <i className="bx bxs-dashboard"/>
+      <Link href={'/hr'}>
+        <a className='flex justify-start font-semibold items-center mx-4 px-4 py-3 rounded-md text-gray-600 hover:bg-indigo-700 hover:text-gray-100'>
+          <i className="bx bxs-dashboard "/>
           <span className='pl-3'>Dashboard</span>
         </a>
       </Link>
