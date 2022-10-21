@@ -10,7 +10,7 @@ interface SidebarProps {
 export default function Sidebar(props:SidebarProps) {
   const {activeMenu} = props;
   return (
-    <aside className='fixed flex w-72 z-100 h-screen flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2'>
+    <aside className='hidden lg:block fixed w-72 z-100 h-screen flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2'>
       <a className="flex justify-end" type='button' onClick={() => {}}>
         <i className='bx bx-x text-3xl hover:bg-indigo-500 hover:text-white hover:rounded-md lg:hidden'/>
       </a>
