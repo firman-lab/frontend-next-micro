@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import cx from 'classnames'
 
 interface MenuItemProps{
     title: string;
@@ -8,12 +9,15 @@ interface MenuItemProps{
     icon: string;
 }
 
-export default function MenuItem(props: MenuItemProps) {
+export default function MenuItem(props: Partial<MenuItemProps>) {
     const{title, active, href = "", icon,} = props;
+    const classItem = cx({
+      active,
+    });
   return (
-    <Link href={'/'}>
-        <a className='flex justify-start font-semibold items-center mx-4 px-4 py-3 rounded-md text-gray-600 hover:bg-indigo-700 hover:text-gray-100'>
-          <i className="bx bxs-dashboard "/>
+    <Link href={href}>
+        <a className={`side-link z-2001 ${classItem}`}>
+          <i className={`bx ${icon}`}/>
           <span className='pl-3'>{title}</span>
         </a>
       </Link>

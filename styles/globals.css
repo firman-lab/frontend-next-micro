@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
+@layer base {
     .side-link{
-        @apply flex items-center font-normal text-stream-gray text-base w-full p-4 rounded-2xl gap-[10px] transition-all;
+        @apply flex justify-start items-center mx-4 px-4 py-3 hover:bg-indigo-600 hover:text-gray-100 font-normal text-gray-600 text-base rounded-2xl gap-[10px] transition-all text-[18px];
     }
     .side-link.active{
-        @apply bg-softpur font-semibold text-white;
+        @apply bg-indigo-600 font-normal text-gray-100;
     }
-} */
+}
