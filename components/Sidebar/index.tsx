@@ -1,6 +1,7 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
+import { useRecoilState } from 'recoil';
+import sidebarShow from '../../store';
 import MenuItem from './MenuItem';
 
 interface SidebarProps {
@@ -9,10 +10,11 @@ interface SidebarProps {
 
 export default function Sidebar(props:SidebarProps) {
   const {activeMenu} = props;
+  const [show, setShow] = useRecoilState(sidebarShow)
   return (
-    <aside className='hidden lg:block fixed w-72 z-100 h-screen flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2'>
-      <a className="flex justify-end" type='button' onClick={() => {}}>
-        <i className='bx bx-x text-3xl hover:bg-indigo-500 hover:text-white hover:rounded-md lg:hidden'/>
+    <aside className={`${show === true ? "!block" : ""} hidden lg:block fixed w-72 z-100 h-screen flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2`}>
+      <a className="flex justify-end lg:hidden" type='button' onClick={() => {setShow(false)}}>
+        <i className='bx bx-x text-3xl hover:bg-indigo-500 hover:text-white hover:rounded-md'/>
       </a>
       <div className="h-19.5">
         {/* <Image className='absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer text-slate-400 xl:hidden' src="/icons/close.svg" height={24} width={24}/> */}
