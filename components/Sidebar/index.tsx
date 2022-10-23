@@ -12,7 +12,7 @@ export default function Sidebar(props:SidebarProps) {
   const {activeMenu} = props;
   const [show, setShow] = useRecoilState(sidebarShow)
   return (
-    <aside className={`${show === true ? "!block" : ""} hidden lg:block fixed w-72 z-100 h-screen flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2`}>
+    <aside className={`${show === true ? "!w-72 !left-0" : ""} -left-72 w-0 lg:left-0 lg:w-72 fixed flex z-100 h-screen flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2 peer-focus:left-0 transition-all delay-100 duration-100`}>
       <a className="flex justify-end lg:hidden" type='button' onClick={() => {setShow(false)}}>
         <i className='bx bx-x text-3xl hover:bg-indigo-500 hover:text-white hover:rounded-md'/>
       </a>

@@ -14,7 +14,7 @@ export default function Member() {
         {/* <div className={`${show === false ? "" : "hidden"} block`}> */}
           <Sidebar activeMenu="dash" />
         {/* </div> */}
-        <div className="lg:pl-72">
+        <div className="lg:pl-80">
           <nav className="flex justify-between items-center flex-wrap pt-12 px-4 pb-6 md:flex-nowrap">
             <div className="flex justify-between items-center w-full mb-3">
               <div className="flex justify-start items-center">
@@ -30,6 +30,9 @@ export default function Member() {
               </div>
             </div>
           </nav>
+          <section>
+            MAkan Besar
+          </section>
         </div>
       </div>
     </>
