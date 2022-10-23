@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 @layer base {
     .side-link{
         @apply flex justify-start items-center mx-4 px-4 py-3 hover:bg-indigo-600 hover:text-gray-100 font-normal text-gray-600 text-base rounded-2xl gap-[10px] transition-all text-[18px];
