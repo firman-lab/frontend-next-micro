@@ -1,13 +1,14 @@
+import classNames from "classnames";
 import React from "react";
 import { useRecoilState } from "recoil";
 import sidebarShow from "../../store";
 
-interface NavbarProps{
-    title : string;
+interface NavbarProps {
+  title: string;
 }
 
 export default function Navbar(props: NavbarProps) {
-    const {title} = props;
+  const { title } = props;
   const [show, setShow] = useRecoilState(sidebarShow);
 
   return (
@@ -26,8 +27,12 @@ export default function Navbar(props: NavbarProps) {
           </h2>
         </div>
         <div className="flex justify-end">
-          <button onClick={() => {}}>
-            <i className="bx bx-bell text-3xl text-gray-400" />
+          <button className="flex" onClick={() => {}}>
+            <i className="bx bx-bell text-3xl text-gray-400 " />
+            <span className="flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-indigo-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-indigo-600"></span>
+            </span>
           </button>
         </div>
       </div>

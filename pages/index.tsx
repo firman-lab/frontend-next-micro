@@ -100,7 +100,7 @@ const Home: NextPage = () => {
             <div className="ml-3 inline-flex rounded-md shadow">
               <a
                 href="#"
-                className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-700"
+                className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-700 hover:text-white"
               >
                 Learn more
               </a>
@@ -157,7 +157,7 @@ const Home: NextPage = () => {
           </div>
           <hr className=" mt-8 border-gray-500" />
           <p className="mx-2 mt-8 text-center font-medium text-gray-500">
-            Copyright 2022. FirmaN Studio. <br/>All right reserved.
+            Copyright 2022 Fist AI. All right reserved.
           </p>
         </div>
       </footer>

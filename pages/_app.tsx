@@ -1,4 +1,6 @@
 import "../styles/globals.css";
+import '../styles/pagination.scss';
+
 import type { AppProps } from "next/app";
 import { RecoilRoot } from "recoil";
 

@@ -18,7 +18,7 @@ export default function Member() {
         <div className="lg:pl-72 mx-8">
           <Navbar title="Overview"/>
           <section>
-            M
+            
           </section>
         </div>
       </div>
