@@ -5,7 +5,7 @@ import sidebarShow from '../../store';
 import MenuItem from './MenuItem';
 
 interface SidebarProps {
-  activeMenu: "dash" | "lo" | "lpe" | "ln" | "lra" | "setting";
+  activeMenu: "dash" | "classify" | "lpe" | "ln" | "lra" | "setting";
 }
 
 export default function Sidebar(props:SidebarProps) {
@@ -27,16 +27,16 @@ export default function Sidebar(props:SidebarProps) {
       <p className="pt-4 pl-4 font-light text-sm">Main</p>
       <MenuItem
         title='Dashboards'
-        href='/'
+        href='/member'
         icon="bxs-dashboard"
         active={activeMenu === "dash"}
       />
       <p className="pt-4 pl-4 font-light text-sm">Scope Data</p>
       <MenuItem
         title='Classify'
-        href='#'
+        href='/member/classify'
         icon='bxs-pyramid'
-        active={activeMenu === "lo"}
+        active={activeMenu === "classify"}
       />
       <MenuItem
         title='History'
