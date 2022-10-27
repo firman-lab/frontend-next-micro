@@ -26,7 +26,7 @@ export default function classify() {
           show === false ? "hidden" : ""
         } lg:hidden fixed bg-gray-600 opacity-60 left-0 right-0 bottom-0 top-0`}
       />
-      <div className="w-full max-h-screen mx-auto pr-8 font-inter">
+      <div className="w-full max-h-screen mx-auto lg:pr-8 font-inter">
         {/* <div className={`${show === false ? "" : "hidden"} block`}> */}
         <Sidebar activeMenu="classify" />
         {/* </div> */}
@@ -63,8 +63,8 @@ export default function classify() {
               </div>
             </div>
           </section>
-          <section className="w-full flex xl:w-12/12 mb-12 xl:mb-0 mx-auto mt-8 py-1">
-            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 px-8 py-9 shadow-lg rounded">
+          <section className="w-full flex flex-wrap justify-between xl:w-full mb-12 xl:mb-0 mx-auto mt-8 py-1">
+            <div className="flex flex-col min-w-0 break-words bg-white w-full mb-6 px-8 py-9 shadow-lg rounded lg:w-9/12">
               <div className="flex flex-wrap justify-between">
                 <h2 className="font-semibold text-blueGray-700 text-base">
                   Data Show
@@ -97,6 +97,12 @@ export default function classify() {
                       <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                         PHONE
                       </th>
+                      <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                        PHONE
+                      </th>
+                      <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                        PHONE
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -118,6 +124,12 @@ export default function classify() {
                           <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                             {item.phone}
                           </td>
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                            {item.phone}
+                          </td>
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                            {item.phone}
+                          </td>
                         </tr>
                       );
                     })}
@@ -133,8 +145,8 @@ export default function classify() {
                 siblingCount={1}
               />
             </div>
-            <div className=" bg-gradient-to-r from-indigo-700 to-indigo-900 h-2/5 ml-4 px-2 py-8 w-3/12 rounded-lg shadow-lg">
-              <h2 className="font-semibold text-blueGray-700 text-white text-center text-xl">
+            <div className=" bg-gradient-to-r from-indigo-700 to-indigo-900 h-2/5 px-2 py-8 w-full rounded-lg shadow-lg md:w-auto">
+              <h2 className="font-semibold text-blueGray-700 text-white text-center text-base lg:text-lg">
                 Tax Result with AI
               </h2>
               <div className="p-4 rounded-lg mt-8">
@@ -159,7 +171,6 @@ export default function classify() {
             </div>
           </section>
           <footer>
-            
           </footer>
         </div>
       </div>

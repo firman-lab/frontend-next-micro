@@ -44,6 +44,7 @@ const Pagination = (props : PaginationProps) => {
   return (
     <ul
       className={classnames('pagination-container', { [className]: className })}
+      // className={"flex list-none"}
     >
       <li
         className={classnames('pagination-item', {
