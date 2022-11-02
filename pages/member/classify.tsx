@@ -26,7 +26,7 @@ export default function classify() {
           show === false ? "hidden" : ""
         } lg:hidden fixed bg-gray-600 opacity-60 left-0 right-0 bottom-0 top-0`}
       />
-      <div className="w-full max-h-screen mx-auto lg:pr-8 font-inter">
+      <div className="w-full max-h-screen mx-auto font-inter">
         {/* <div className={`${show === false ? "" : "hidden"} block`}> */}
         <Sidebar activeMenu="classify" />
         {/* </div> */}
@@ -64,7 +64,7 @@ export default function classify() {
             </div>
           </section>
           <section className="w-full flex flex-wrap justify-between xl:w-full mb-12 xl:mb-0 mx-auto mt-8 py-1">
-            <div className="flex flex-col min-w-0 break-words bg-white w-full mb-6 px-8 py-9 shadow-lg rounded lg:w-9/12">
+            <div className="flex flex-col min-w-0 break-words bg-white w-full mb-6 px-8 py-9 shadow-lg rounded xl:w-9/12">
               <div className="flex flex-wrap justify-between">
                 <h2 className="font-semibold text-blueGray-700 text-base">
                   Data Show
@@ -137,7 +137,7 @@ export default function classify() {
                 </table>
               </div>
               <Pagination
-                className="pagination-bar flex justify-end pt-8"
+                className="md:flex md:justify-end block py-4 overflow-x-auto"
                 currentPage={currentPage}
                 totalCount={data.length}
                 pageSize={PageSize}
@@ -145,26 +145,26 @@ export default function classify() {
                 siblingCount={1}
               />
             </div>
-            <div className=" bg-gradient-to-r from-indigo-700 to-indigo-900 h-2/5 px-2 py-8 w-full rounded-lg shadow-lg md:w-auto">
+            <div className="block bg-gradient-to-r from-indigo-700 to-indigo-900 h-2/5 px-2 py-8 w-full rounded-lg shadow-lg md:w-auto">
               <h2 className="font-semibold text-blueGray-700 text-white text-center text-base lg:text-lg">
                 Tax Result with AI
               </h2>
               <div className="p-4 rounded-lg mt-8">
                 <div className="flex flex-wrap justify-between">
-                  <p className="text-white font-semibold"> Objek PPh 21</p>
+                  <p className="text-white font-semibold pr-4"> Objek PPh 21</p>
                   <p className="text-white">{`Rp. 55.000.000`}</p>
                 </div>
                 <div className="flex flex-wrap justify-between mt-4">
-                  <p className="text-white font-semibold"> Objek PPh 23</p>
+                  <p className="text-white font-semibold pr-4"> Objek PPh 23</p>
                   <p className="text-white">{`Rp. 202.567.000`}</p>
                 </div>
                 <div className="flex flex-wrap justify-between mt-4">
-                  <p className="text-white font-semibold"> Koreksi Biaya</p>
+                  <p className="text-white font-semibold pr-4"> Koreksi Biaya</p>
                   <p className="text-white">{`Rp. 298.670.000`}</p>
                 </div>
                 <hr className="mt-2"/>
                 <div className="flex flex-wrap justify-between mt-2">
-                  <p className="text-white font-semibold"> Total Pajak</p>
+                  <p className="text-white font-semibold pr-4"> Total Pajak</p>
                   <p className="text-white">{`Rp. 298.670.000`}</p>
                 </div>
               </div>

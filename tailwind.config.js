@@ -10,8 +10,6 @@ module.exports = {
       inter:['Quicksand', 'sans-serif'],
     }
   },
-  darkMode: [
-    'class', '[data-mode="dark"]',
-  ],
+  darkMode: 'class',
   plugins: [],
 }

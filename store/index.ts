@@ -1,8 +1,13 @@
 import { atom } from "recoil";
 
 const sidebarShow = atom({
-    key: "sidebar-show",
-    default: false,
+  key: "sidebar-show",
+  default: false,
 });
 
-export default sidebarShow;
+const darkState = atom({
+  key: "darkmoderec",
+  default: 'light',
+});
+
+export { sidebarShow, darkState };

@@ -1,37 +1,42 @@
-import React from "react";
+import Aos from "aos";
+import React, { useEffect } from "react";
 
 const features = [
-    {
-      name: "Faster over the rainbow",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-      icon: "bolt",
-    },
-    {
-      name: "Less Touch, No Brain",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-      icon: "click",
-    },
-    {
-      name: "High accuracy",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-      icon: "cpu",
-    },
-    {
-      name: "More sat-set than you",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-      icon: "cubeless",
-    },
-  ];  
+  {
+    name: "Faster over the rainbow",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    icon: "bolt",
+  },
+  {
+    name: "Less Touch, No Brain",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    icon: "click",
+  },
+  {
+    name: "High accuracy",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    icon: "cpu",
+  },
+  {
+    name: "More sat-set than you",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    icon: "cubeless",
+  },
+];
 
 export default function Features() {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
-    <section className="lg:py-12 scroll-smooth" id="features">
+    <section className="lg:py-12 py-4 scroll-smooth mt-12" id="features">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center">
+        <div className="text-center" data-aos="fade-up">
           <h2 className="text-lg font-semibold text-indigo-600">
             Potential Tax
           </h2>
@@ -46,7 +51,7 @@ export default function Features() {
         <div className="mt-10">
           <dl className="space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
             {features.map((feature) => (
-              <div key={feature.name} className="relative">
+              <div key={feature.name} className="relative" data-aos="fade-left">
                 <dt>
                   <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500">
                     <img

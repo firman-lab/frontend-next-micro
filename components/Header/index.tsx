@@ -1,22 +1,58 @@
-import { Popover, Transition } from "@headlessui/react";
-import React, { Fragment } from "react";
+import { Popover, Switch, Transition } from "@headlessui/react";
+import React, { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
-
+import { useRecoilState } from "recoil";
+import { darkState } from "../../store";
 
 const navigation = [
-    { name: "Product", href: "#product" },
-    { name: "Features", href: "#features" },
-    { name: "Contact", href: "#contact" },
-    { name: "About", href: "#about" },
-  ];
+  { name: "Product", href: "#product" },
+  { name: "Features", href: "#features" },
+  { name: "Contact", href: "#contact" },
+  { name: "About", href: "#about" },
+];
 
-  interface HeaderProps {
-    href : string;
-    title : string;
-  }
+interface HeaderProps {
+  href: string;
+  title: string;
+  // setToggle: () => void;
+}
+
+export default function Header(props: HeaderProps) {
+  const { href, title} = props;
+
+  const [enabled, setEnabled] = useState(false);
+  const [dark, setDark] = useRecoilState(darkState);
+
+  useEffect(() => {
+    onReloadTheme();
+    console.log('recoil', dark)
+  }, [enabled])
   
-export default function Header(props : HeaderProps) {
-    const {href, title} = props;
+
+  const setDarkNow = () => {
+    // setEnabled (enabled === false ? true : false);
+    // setDark(dark === 'light' ? 'dark' : 'light')
+    if(dark === "light"){
+      setDark("dark");
+      setEnabled(true);
+    }else{
+      setDark("light");
+      setEnabled(false);
+    }
+  }
+
+  const onReloadTheme= () => {
+    if(dark === 'dark' 
+    // || window.matchMedia('(prefers-color-scheme: dark)').matches
+    ){
+      document.documentElement.classList.add('dark');
+      setEnabled(true);
+    }else{
+      document.documentElement.classList.remove('dark');
+      setEnabled(false);
+    }
+  }
+
   return (
     <Popover>
       <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
@@ -38,6 +74,7 @@ export default function Header(props : HeaderProps) {
                 <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open mian menu</span>
                   <Image
+                    alt="bar-ic"
                     width={24}
                     height={24}
                     src="/icons/bar.svg"
@@ -47,7 +84,7 @@ export default function Header(props : HeaderProps) {
               </div>
             </div>
           </div>
-          <div className="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
+          <div className="hidden md:ml-10 md:block md:space-x-8 md:pr-4 my-auto">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -63,6 +100,20 @@ export default function Header(props : HeaderProps) {
             >
               {title}
             </a>
+            <Switch
+              checked={enabled}
+              onChange={setDarkNow}
+              className={`${
+                enabled === true ? "bg-indigo-900" : "bg-indigo-400"
+              } mx-4 my-4 inline-flex h-[20px] w-[35px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+            >
+              {/* <span className="sr-only">Use setting</span> */}
+              <span
+                aria-hidden="true"
+                className={`${enabled === true ? "translate-x-4" : "translate-x-0"}
+                  pointer-events-none inline-block h-[16px] w-[16px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+              />
+            </Switch>
           </div>
         </nav>
       </div>
@@ -92,6 +143,7 @@ export default function Header(props : HeaderProps) {
                 <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Close main menu</span>
                   <Image
+                    alt="close-ic"
                     width={24}
                     height={24}
                     src="/icons/close.svg"
@@ -111,6 +163,7 @@ export default function Header(props : HeaderProps) {
                 </a>
               ))}
             </div>
+
             <a
               type="button"
               href={href}
@@ -118,6 +171,7 @@ export default function Header(props : HeaderProps) {
             >
               {title}
             </a>
+            
           </div>
         </Popover.Panel>
       </Transition>

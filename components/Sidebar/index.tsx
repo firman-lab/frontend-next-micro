@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 import { useRecoilState } from 'recoil';
 import sidebarShow from '../../store';
@@ -18,11 +19,11 @@ export default function Sidebar(props:SidebarProps) {
       </a>
       <div className="h-19.5">
         {/* <Image className='absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer text-slate-400 xl:hidden' src="/icons/close.svg" height={24} width={24}/> */}
-        <a href="/" className='flex items-center justify-center space-x-1 rounded-md px-2 py-4'>
+        <Link href="/" className='flex items-center justify-center space-x-1 rounded-md px-2 py-4'>
           {/* <i className='bx bx-chevrons-left text-3xl hover:bg-indigo-600 hover:text-white hover:rounded-md'></i>         */}
-          <Image className='inline transition-all duration-200 text-indigo-700 ease-nav-brand max-h-8' alt='main-logo' src="/images/kemenhan.png" height={85} width={85}/>
+          <Image className='inline transition-all duration-200 text-indigo-700 ease-nav-brand mr-4' alt='main-logo' src="/icons/logo.svg" height={35} width={35}/>
           <span className='ml-1 font-bold transition-all duration-200 text-3xl'>Fast</span>
-        </a>
+        </Link>
       </div>
       <hr className='h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent' />
       <p className="pt-4 pl-4 font-light text-sm">Main</p>
