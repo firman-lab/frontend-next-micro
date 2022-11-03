@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 import { useRecoilState } from "recoil";
-import sidebarShow from "../../store";
+import { sidebarShow } from "../../store";
 
 interface NavbarProps {
   title: string;

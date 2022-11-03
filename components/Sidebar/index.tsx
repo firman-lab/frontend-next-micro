@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
 import { useRecoilState } from 'recoil';
-import sidebarShow from '../../store';
+import { sidebarShow } from '../../store';
 import MenuItem from './MenuItem';
 
 interface SidebarProps {

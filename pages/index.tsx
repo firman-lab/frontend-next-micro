@@ -57,7 +57,7 @@ const Home: NextPage = () => {
 
   
   return (
-    <>
+    <div>
       <div className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl">
           <Head>
@@ -168,7 +168,7 @@ const Home: NextPage = () => {
           </p>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 

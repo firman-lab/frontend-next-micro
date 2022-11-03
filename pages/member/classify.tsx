@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil";
 import Navbar from "../../components/Member/Navbar";
 import Pagination from "../../components/Pagination";
 import Sidebar from "../../components/Sidebar";
-import sidebarShow from "../../store";
+import { sidebarShow } from "../../store";
 import data from "../../store/mock-data.json";
 
 let PageSize = 6;

@@ -8,16 +8,17 @@ export default function CompanyClients() {
     <section className="py-8 mt-8 lg:py-12 lg:mt-12" data-aos="zoom-in">
       <div className="max-w-7xl mx-auto my-auto px-4">
         <div className="flex justify-center justify-items-center items-center">
-          {brandClient.map((item) => (
-            <div className="md:mb-0 mx-2 lg:mx-auto">
+          {brandClient.map((item, index) => (
+            // <div className="md:mb-0 mx-2 lg:mx-auto" >
               <Image
+                key={index}
                 className="mx-auto"
                 alt="brand"
                 width={110}
                 height={32}
                 src={`/images/${item}.png`}
               />
-            </div>
+            // </div>
           ))}
         </div>
       </div>

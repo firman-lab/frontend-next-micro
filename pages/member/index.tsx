@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
 import Navbar from "../../components/Member/Navbar";
 import Sidebar from "../../components/Sidebar";
-import sidebarShow from "../../store";
+import { sidebarShow } from "../../store";
 
 export default function Member() {
 
