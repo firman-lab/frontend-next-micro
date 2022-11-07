@@ -15,7 +15,7 @@ import Document, {
   
     render() {
       return (
-        <Html>
+        <Html className="dark">
           <Head>
             <link
               href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap"
@@ -24,12 +24,12 @@ import Document, {
             <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
             <link
               rel="shortcut icon"
-              href="../assets/img/global/logo.svg"
+              href="../icons/logo.svg"
             />
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></link>
             <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
           </Head>
-          <body>
+          <body className="dark:bg-gray-700">
             <Main />
             <NextScript />
           </body>

@@ -1,17 +1,17 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 export default function Login() {
   return (
-    <div className="flex justify-center items-center pb-24">
-      <div className="w-full sm:w-3/12">
-        <h1 className="text-4xl text-gray-900 mb-6">
+    <div className="flex justify-center items-center pb-24 dark:bg-gray-800">
+      <div className="w-full lg:w-3/12">
+        <h1 className="text-4xl text-gray-900 dark:text-gray-200 mb-6">
           <span className="font-bold">Continue</span> Study, <br />
           Finish your <span className="font-bold">Goals</span>
         </h1>
         <form onSubmit={() => {}}>
           <div className="flex flex-col mb-4">
-            <label htmlFor="email" className="text-lg mb-2">
+            <label htmlFor="email" className="text-lg mb-2 dark:text-gray-200">
               Email Address
             </label>
             <input
@@ -19,13 +19,13 @@ export default function Login() {
               type="email"
               onChange={() => {}}
               className="bg-white focus:outline-none border w-full px-6 py-3 border-gray-600 focus:border-indigo-600 rounded-md"
-            //   value={}
+              //   value={}
               placeholder="Your email addres"
             />
           </div>
 
           <div className="flex flex-col mb-4">
-            <label htmlFor="password" className="text-lg mb-2">
+            <label htmlFor="password" className="text-lg mb-2 dark:text-gray-200">
               Password
             </label>
             <input
@@ -33,7 +33,7 @@ export default function Login() {
               type="password"
               onChange={() => {}}
               className="bg-white focus:outline-none border px-6 py-3 w-full border-gray-600 focus:border-indigo-600 rounded-md"
-            //   value={}
+              //   value={}
               placeholder="Your password"
             />
           </div>
@@ -49,9 +49,9 @@ export default function Login() {
         </form>
       </div>
 
-      <div className="w-2/12 hidden sm:block"></div>
+      <div className="w-2/12 hidden lg:block"></div>
 
-      <div className="w-5/12 hidden sm:block md:w-justify-end pt-24 pr-16">
+      <div className="w-5/12 hidden lg:block md:w-justify-end pt-24 pr-16">
         <div className="relative md:block" style={{ width: 369, height: 440 }}>
           <div
             className="absolute border-indigo-700 border-2 -mt-8 -ml-16 left-0 md:block rounded-md"
@@ -76,5 +76,5 @@ export default function Login() {
         </div>
       </div>
     </div>
-  )
+  );
 }

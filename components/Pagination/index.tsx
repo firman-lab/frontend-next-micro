@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { usePagination, DOTS } from '../../state/usePagination';
+import { usePagination, DOTS } from '../../custom/usePagination';
 
 interface PaginationProps{
     onPageChange: any;

@@ -6,6 +6,9 @@ import Features from "../components/Features";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import AOS from "aos";
+import { useRecoilValue } from "recoil";
+import { darkState } from "../store";
+import useDarkMode from "../custom/useDarkMode";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -48,21 +51,20 @@ const features = [
 ];
 
 const Home: NextPage = () => {
+
+  const theme = useRecoilValue(darkState);
   
   useEffect(() => {
     AOS.init();
   })
 
- 
-
-  
   return (
     <div>
       <div className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl">
           <Head>
             <title>Fist</title>
-            <link rel="icon" href="/favicon.ico" />
+            {/* <link rel="icon" href="/favicon.ico" /> */}
           </Head>
           <div className="relative z-10 bg-white dark:bg-black pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
             <svg

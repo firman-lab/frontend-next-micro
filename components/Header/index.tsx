@@ -1,8 +1,10 @@
 import { Popover, Switch, Transition } from "@headlessui/react";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useRecoilState } from "recoil";
 import { darkState } from "../../store";
+import useDarkMode from "../../custom/useDarkMode";
+import { useTheme } from "next-themes";
 
 const navigation = [
   { name: "Product", href: "#product" },
@@ -21,37 +23,52 @@ export default function Header(props: HeaderProps) {
   const { href, title} = props;
 
   const [enabled, setEnabled] = useState(false);
-  const [dark, setDark] = useRecoilState(darkState);
+  const {theme, setTheme} = useTheme();
+  // const [recTheme, setRecTheme] = useRecoilState(darkState);
+
+  const changeToggle = () => {
+    // setTheme(theme === 'light' ? 'dark' : 'light');
+    if(theme === 'light'){
+      setTheme('dark');
+      // setRecTheme('dark');
+      setEnabled(true);
+    }else{
+      setTheme('light');
+      // setRecTheme('light');
+      setEnabled(false);
+    }
+    // setEnabled(theme === 'light' ? false : true);
+  }
+  // const [dark, setDark] = useRecoilState(darkState);
 
   useEffect(() => {
-    onReloadTheme();
-    console.log('recoil', dark)
+    setEnabled(theme === "dark" ? true : false);
   }, [enabled])
   
 
-  const setDarkNow = () => {
-    // setEnabled (enabled === false ? true : false);
-    // setDark(dark === 'light' ? 'dark' : 'light')
-    if(dark === "light"){
-      setDark("dark");
-      setEnabled(true);
-    }else{
-      setDark("light");
-      setEnabled(false);
-    }
-  }
+  // const setDarkNow = () => {
+  //   // setEnabled (enabled === false ? true : false);
+  //   // setDark(dark === 'light' ? 'dark' : 'light')
+  //   if(dark === "light"){
+  //     setDark("dark");
+  //     setEnabled(true);
+  //   }else{
+  //     setDark("light");
+  //     setEnabled(false);
+  //   }
+  // }
 
-  const onReloadTheme= () => {
-    if(dark === 'dark' 
-    // || window.matchMedia('(prefers-color-scheme: dark)').matches
-    ){
-      document.documentElement.classList.add('dark');
-      setEnabled(true);
-    }else{
-      document.documentElement.classList.remove('dark');
-      setEnabled(false);
-    }
-  }
+  // const onReloadTheme= () => {
+  //   if(dark === 'dark' 
+  //   // || window.matchMedia('(prefers-color-scheme: dark)').matches
+  //   ){
+  //     document.documentElement.classList.add('dark');
+  //     setEnabled(true);
+  //   }else{
+  //     document.documentElement.classList.remove('dark');
+  //     setEnabled(false);
+  //   }
+  // }
 
   return (
     <Popover>
@@ -100,20 +117,21 @@ export default function Header(props: HeaderProps) {
             >
               {title}
             </a>
-            <Switch
-              checked={enabled}
-              onChange={setDarkNow}
+            { enabled === true ? (<button onClick={changeToggle} className="bg-indigo-300 text-indigo-800 rounded-xl p-2 text-xs">Light</button>) : (<button onClick={changeToggle} className="bg-indigo-800 text-indigo-200 rounded-xl p-2 text-xs">Dark</button>)
+            }
+            {/* <Switch
+              checked={true}
+              onChange={() => {changeToggle()}}
               className={`${
-                enabled === true ? "bg-indigo-900" : "bg-indigo-400"
+                theme === 'dark' ? "bg-indigo-900" : "bg-indigo-400"
               } mx-4 my-4 inline-flex h-[20px] w-[35px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
-              {/* <span className="sr-only">Use setting</span> */}
               <span
                 aria-hidden="true"
-                className={`${enabled === true ? "translate-x-4" : "translate-x-0"}
+                className={`${theme === 'dark' ? "translate-x-4" : "translate-x-0"}
                   pointer-events-none inline-block h-[16px] w-[16px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
               />
-            </Switch>
+            </Switch> */}
           </div>
         </nav>
       </div>
