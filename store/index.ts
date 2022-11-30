@@ -5,9 +5,9 @@ const sidebarShow = atom({
   default: false,
 });
 
-const darkState = atom({
-  key: "darkmoderec",
-  default: "light",
-});
+// const darkState = atom({
+//   key: "darkmoderec",
+//   default: "light",
+// });
 
-export { sidebarShow, darkState };
+export { sidebarShow };

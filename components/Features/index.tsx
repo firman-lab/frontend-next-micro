@@ -37,13 +37,13 @@ export default function Features() {
     <section className="lg:py-12 py-4 scroll-smooth mt-12" id="features">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center" data-aos="fade-up">
-          <h2 className="text-lg font-semibold text-indigo-600">
+          <h2 className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">
             Potential Tax
           </h2>
-          <p className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200 sm:text-4xl">
             A better way to finish your work
           </p>
-          <p className="mt-4 max-w-4xl text-xl text-gray-500 lg:mx-auto">
+          <p className="mt-4 max-w-4xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
             Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
             voluptatum cupiditate veritatis in accusamus quisquam.
           </p>
@@ -60,11 +60,11 @@ export default function Features() {
                       src={`../icons/${feature.icon}.svg`}
                     />
                   </div>
-                  <p className="ml-16 text-lg font-medium leading-6 text-gray-900">
+                  <p className="ml-16 text-lg font-medium leading-6 text-gray-900 dark:text-indigo-400">
                     {feature.name}
                   </p>
                 </dt>
-                <dd className="mt-2 ml-16 text-base text-gray-500">
+                <dd className="mt-2 ml-16 text-base text-gray-500 dark:text-gray-300">
                   {feature.description}
                 </dd>
               </div>

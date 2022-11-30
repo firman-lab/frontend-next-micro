@@ -1,9 +1,6 @@
 import { Popover, Switch, Transition } from "@headlessui/react";
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useRecoilState } from "recoil";
-import { darkState } from "../../store";
-import useDarkMode from "../../custom/useDarkMode";
 import { useTheme } from "next-themes";
 
 const navigation = [
