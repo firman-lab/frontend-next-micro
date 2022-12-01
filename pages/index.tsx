@@ -6,8 +6,6 @@ import Features from "../components/Features";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import AOS from "aos";
-import { useRecoilValue } from "recoil";
-import useDarkMode from "../custom/useDarkMode";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -57,14 +55,14 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <div className="relative overflow-hidden bg-transparent">
+      <div className="relative bg-transparent overflow-hidden">
         <div className="mx-auto max-w-7xl">
           <Head>
             <title>Fist</title>
             {/* <link rel="icon" href="/favicon.ico" /> */}
           </Head>
-          <div className="relative z-10 bg-transparent pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
-            <svg
+          <div className="relative z-10 bg-transparent pb-8 sm:pb-16 md:pb-20 xl:w-full xl:max-w-2xl xl:pb-28 xl:pb-32">
+            {/* <svg
               className="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block"
               fill="currentColor"
               viewBox="0 0 100 100"
@@ -72,12 +70,12 @@ const Home: NextPage = () => {
               aria-hidden="true"
             >
               <polygon points="50,0 100,0 50,100 0,100" />
-            </svg>
+            </svg> */}
             <Header title="Log in" href="/login"/>
             <Hero/>
           </div>
         </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:block hidden" data-aos="fade-left">
+        <div className="xl:absolute xl:inset-y-0 xl:right-0 xl:w-1/2 xl:block hidden" data-aos="fade-down">
           <img
             src="https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
             alt="hero"
@@ -94,7 +92,7 @@ const Home: NextPage = () => {
               Prepare your data now!
             </span>
           </h2>
-          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0" data-aos="fade-left">
+          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0" data-aos="fade-down">
             <div className="inline-flex rounded-md shadow">
               <a
                 href="#"

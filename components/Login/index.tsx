@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Login() {
   return (
-    <div className="flex justify-center items-center pb-24 dark:bg-gray-800">
+    <div className="flex justify-center items-center pb-24">
       <div className="w-full lg:w-3/12">
         <h1 className="text-4xl text-gray-900 dark:text-gray-200 mb-6">
           <span className="font-bold">Continue</span> Study, <br />
@@ -18,7 +18,7 @@ export default function Login() {
               name="email"
               type="email"
               onChange={() => {}}
-              className="bg-white focus:outline-none border w-full px-6 py-3 border-gray-600 focus:border-indigo-600 rounded-md"
+              className="bg-white focus:outline-none border w-full px-6 py-3 border-gray-600 focus:border-indigo-600 rounded-md dark:bg-gray-700 dark:focus:border-gray-400"
               //   value={}
               placeholder="Your email addres"
             />
@@ -32,7 +32,7 @@ export default function Login() {
               name="password"
               type="password"
               onChange={() => {}}
-              className="bg-white focus:outline-none border px-6 py-3 w-full border-gray-600 focus:border-indigo-600 rounded-md"
+              className="bg-white focus:outline-none border px-6 py-3 w-full border-gray-600 focus:border-indigo-600 rounded-md dark:bg-gray-700 dark:focus:border-gray-400"
               //   value={}
               placeholder="Your password"
             />

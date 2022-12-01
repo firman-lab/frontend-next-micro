@@ -40,7 +40,8 @@ export default function Header(props: HeaderProps) {
 
   useEffect(() => {
     setEnabled(theme === "dark" ? true : false);
-  }, [enabled])
+    console.log('theme:', theme);
+  }, [theme])
   
 
   // const setDarkNow = () => {
@@ -71,7 +72,7 @@ export default function Header(props: HeaderProps) {
     <Popover>
       <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
         <nav
-          className="relative flex items-center justify-between sm:h-10 lg:justify-start"
+          className="relative flex items-center justify-between sm:h-10 xl:justify-start"
           aria-label="Globals"
         >
           <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">

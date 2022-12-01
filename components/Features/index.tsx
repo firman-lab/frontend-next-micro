@@ -51,7 +51,7 @@ export default function Features() {
         <div className="mt-10">
           <dl className="space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
             {features.map((feature) => (
-              <div key={feature.name} className="relative" data-aos="fade-left">
+              <div key={feature.name} className="relative" data-aos="fade-up">
                 <dt>
                   <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500">
                     <img

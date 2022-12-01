@@ -29,7 +29,7 @@ import Document, {
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></link>
             <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
           </Head>
-          <body className="dark:bg-slate-800">
+          <body>
             <Main />
             <NextScript />
           </body>

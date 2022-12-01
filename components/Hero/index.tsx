@@ -3,16 +3,16 @@ import React from "react";
 export default function Hero() {
   return (
     <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt12 md:px-6 lg:mt-20 lg:px-8 xl:mt-28" data-aos="fade-right">
-      <div className="sm:text-center lg:text-left">
+      <div className="sm:text-center xl:text-left">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-200 sm:text-5xl md:text-6xl">
           <span className="block xl:inline">Take Your Data</span>
           <span className="block text-indigo-600">Sat Set, maak Jreeng!!</span>
         </h1>
-        <p className="mt-3 text-base text-gray-500 dark:text-gray-300 sm:mx-auto sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+        <p className="mt-3 text-base text-gray-500 dark:text-gray-300 sm:mx-auto sm:max-w-xl sm:text-lg md:mt-5 md:text-xl xl:mx-0">
           Classify Journal Acounting Data with best practice of Machine Learning
           algorithm
         </p>
-        <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+        <div className="mt-10 sm:flex sm:justify-center xl:justify-start">
           <div className="rounded-md shadow">
             <a
               href="#"
