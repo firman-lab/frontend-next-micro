@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { useRecoilValue } from "recoil";
 import Navbar from "../../components/Member/Navbar";
-import Pagination from "../../components/Pagination";
+import Paginations from "../../components/Paginations";
 import Sidebar from "../../components/Sidebar";
 import { sidebarShow } from "../../store";
 import data from "../../store/mock-data.json";
@@ -26,13 +26,13 @@ export default function classify() {
           show === false ? "hidden" : ""
         } lg:hidden fixed bg-gray-600 opacity-60 left-0 right-0 bottom-0 top-0`}
       />
-      <div className="w-full max-h-screen mx-auto font-inter">
+      <div className="w-full mx-auto font-inter dark:bg-[#0F172A]">
         {/* <div className={`${show === false ? "" : "hidden"} block`}> */}
         <Sidebar activeMenu="classify" />
         {/* </div> */}
         <div className="lg:pl-72 mx-8">
           <Navbar title="Classify Data" />
-          <section className="py-8 px-4 bg-gradient-to-r from-indigo-700 to-indigo-900 rounded-lg antialiased tracking-tight">
+          <section className="py-8 px-4 bg-gradient-to-r from-indigo-700 to-indigo-900 dark:bg-[#1E293B] rounded-lg antialiased tracking-tight">
             <div className="px-5 mx-auto text-center">
               <h2 className="pb-4 text-white text-3xl font-bold">
                 Upload Jurnal Keuangan
@@ -64,7 +64,7 @@ export default function classify() {
             </div>
           </section>
           <section className="w-full flex flex-wrap justify-between xl:w-full mb-12 xl:mb-0 mx-auto mt-8 py-1">
-            <div className="flex flex-col min-w-0 break-words bg-white w-full mb-6 px-8 py-9 shadow-lg rounded xl:w-9/12">
+            <div className="flex flex-col min-w-0 break-words bg-white dark:bg-[#1E293B] w-full mb-6 px-8 py-9 shadow-lg rounded xl:w-9/12">
               <div className="flex flex-wrap justify-between">
                 <h2 className="font-semibold text-blueGray-700 text-base">
                   Data Show
@@ -136,7 +136,7 @@ export default function classify() {
                   </tbody>
                 </table>
               </div>
-              <Pagination
+              <Paginations
                 className="md:flex md:justify-end block py-4 overflow-x-auto"
                 currentPage={currentPage}
                 totalCount={data.length}

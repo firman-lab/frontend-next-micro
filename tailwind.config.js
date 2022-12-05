@@ -8,8 +8,9 @@ module.exports = {
     extend: {},
     fontFamily: {
       inter:['Quicksand', 'sans-serif'],
-    }
+    },
   },
   darkMode: 'class',
   plugins: [],
+
 }

@@ -20,4 +20,10 @@
         @apply: bg-green-400;
         background-color: #68D391;
       }
+      .pagination-item{
+        @apply py-3 h-8 text-center mx-auto my-1 flex justify-center box-border items-center text-xs rounded-2xl min-w-[32px];
+      }
+      .arrow{
+       @apply content-none border-t-2 border-slate-800 dark:border-white border-solid border-r-2 h-2 w-2 inline-block hover:bg-transparent hover:cursor-default;
+      }
 }
