@@ -17,32 +17,31 @@ interface HeaderProps {
 }
 
 export default function Header(props: HeaderProps) {
-  const { href, title} = props;
+  const { href, title } = props;
 
   const [enabled, setEnabled] = useState(false);
-  const {theme, setTheme} = useTheme();
+  const { theme, setTheme } = useTheme();
   // const [recTheme, setRecTheme] = useRecoilState(darkState);
 
   const changeToggle = () => {
     // setTheme(theme === 'light' ? 'dark' : 'light');
-    if(theme === 'light'){
-      setTheme('dark');
+    if (theme === "light") {
+      setTheme("dark");
       // setRecTheme('dark');
       setEnabled(true);
-    }else{
-      setTheme('light');
+    } else {
+      setTheme("light");
       // setRecTheme('light');
       setEnabled(false);
     }
     // setEnabled(theme === 'light' ? false : true);
-  }
+  };
   // const [dark, setDark] = useRecoilState(darkState);
 
   useEffect(() => {
     setEnabled(theme === "dark" ? true : false);
-    console.log('theme:', theme);
-  }, [theme])
-  
+    console.log("theme:", theme);
+  }, [theme]);
 
   // const setDarkNow = () => {
   //   // setEnabled (enabled === false ? true : false);
@@ -57,7 +56,7 @@ export default function Header(props: HeaderProps) {
   // }
 
   // const onReloadTheme= () => {
-  //   if(dark === 'dark' 
+  //   if(dark === 'dark'
   //   // || window.matchMedia('(prefers-color-scheme: dark)').matches
   //   ){
   //     document.documentElement.classList.add('dark');
@@ -115,8 +114,21 @@ export default function Header(props: HeaderProps) {
             >
               {title}
             </a>
-            { enabled === true ? (<button onClick={changeToggle} className="bg-indigo-300 text-indigo-800 rounded-xl p-2 text-xs">Light</button>) : (<button onClick={changeToggle} className="bg-indigo-800 text-indigo-200 rounded-xl p-2 text-xs">Dark</button>)
-            }
+            {enabled === true ? (
+              <button
+                onClick={changeToggle}
+                className="bg-indigo-300 text-indigo-800 rounded-xl p-2 text-xs"
+              >
+                Light
+              </button>
+            ) : (
+              <button
+                onClick={changeToggle}
+                className="bg-indigo-800 text-indigo-200 rounded-xl p-2 text-xs"
+              >
+                Dark
+              </button>
+            )}
             {/* <Switch
               checked={true}
               onChange={() => {changeToggle()}}
@@ -146,7 +158,7 @@ export default function Header(props: HeaderProps) {
           focus
           className="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden"
         >
-          <div className="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
+          <div className="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5 dark:bg-slate-900">
             <div className="flex items-center justify-between px-5 pt-4">
               <div>
                 <img
@@ -173,21 +185,38 @@ export default function Header(props: HeaderProps) {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 hover:bg-gray-100 hover:text-gray-900"
                 >
                   {item.name}
                 </a>
               ))}
             </div>
-
+            <div className="flex justify-between items-center px-5 pb-3">
+              <div className="font-medium dark:text-gray-300 text-gray-700">Set Mode</div>
+              {enabled === true ? (
+              <button
+                onClick={changeToggle}
+                className="bg-indigo-300 text-indigo-800 rounded-xl p-2 text-xs"
+              >
+                Light
+              </button>
+            ) : (
+              <button
+                onClick={changeToggle}
+                className="bg-indigo-800 text-indigo-200 rounded-xl p-2 text-xs"
+              >
+                Dark
+              </button>
+            )}
+            </div>
+            
             <a
               type="button"
               href={href}
-              className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100"
+              className="block w-full bg-gray-50 dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-gray-500 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100"
             >
               {title}
             </a>
-            
           </div>
         </Popover.Panel>
       </Transition>

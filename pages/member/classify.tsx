@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { useRecoilValue } from "recoil";
+import Inputfile from "../../components/Inputfile";
 import Navbar from "../../components/Member/Navbar";
 import Paginations from "../../components/Paginations";
 import Sidebar from "../../components/Sidebar";
@@ -40,7 +41,7 @@ export default function classify() {
               {/* <button onClick={()=>{}} className="px-12 py-4 bg-white font-medium text-lg rounded-lg hover:bg-indigo-500 hover:text-white hover:shadow-md ">
                     Select Data
                 </button> */}
-              <div className="flex justify-center">
+              {/* <div className="flex justify-center">
                 <div className="px-4 py-4 rounded-md shadow-md lg:w-4/12">
                   <label className="text-white text-lg">Pilih file .xlsx</label>
                   <input
@@ -60,7 +61,8 @@ export default function classify() {
                   focus:text-gray-700 hover:scale-105"
                   />
                 </div>
-              </div>
+              </div> */}
+              <Inputfile/>
             </div>
           </section>
           <section className="w-full flex flex-wrap justify-between xl:w-full mb-12 xl:mb-0 mx-auto mt-8 py-1">

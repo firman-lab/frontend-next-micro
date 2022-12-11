@@ -49,7 +49,7 @@ const Paginations = (props: PaginationProps) => {
         // })}
         className={`pagination-item ${
           currentPage === 1
-            ? "hover:bg-transparent hover:cursor-default pointer-events-none"
+            ? "hover:bg-transparent hover:cursor-default pointer-events-none "
             : "hover:cursor-auto hover:bg-slate-700 hover:opacity-95"
         }`}
         onClick={onPrevious}
