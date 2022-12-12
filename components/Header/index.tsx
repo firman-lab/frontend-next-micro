@@ -117,16 +117,20 @@ export default function Header(props: HeaderProps) {
             {enabled === true ? (
               <button
                 onClick={changeToggle}
-                className="bg-indigo-300 text-indigo-800 rounded-xl p-2 text-xs"
+                className="bg-indigo-800 text-indigo-800 rounded-xl p-2 text-xs"
               >
-                Light
+                <span>
+                  <Image className="text-cyan-50" width={24} height={24} src="/icons/sun_light.svg" alt="Dark"/>
+                </span>
               </button>
             ) : (
               <button
                 onClick={changeToggle}
                 className="bg-indigo-800 text-indigo-200 rounded-xl p-2 text-xs"
               >
-                Dark
+                <span>
+                  <Image className="text-cyan-50" width={24} height={24} src="/icons/moon_dark.svg" alt="Dark"/>
+                </span>
               </button>
             )}
             {/* <Switch
@@ -196,16 +200,20 @@ export default function Header(props: HeaderProps) {
               {enabled === true ? (
               <button
                 onClick={changeToggle}
-                className="bg-indigo-300 text-indigo-800 rounded-xl p-2 text-xs"
+                className="bg-indigo-800 text-indigo-800 rounded-xl p-2 text-xs"
               >
-                Light
+                <span>
+                  <Image className="text-cyan-50" width={24} height={24} src="/icons/sun_light.svg" alt="Dark"/>
+                </span>
               </button>
             ) : (
               <button
                 onClick={changeToggle}
                 className="bg-indigo-800 text-indigo-200 rounded-xl p-2 text-xs"
               >
-                Dark
+                <span>
+                  <Image className="text-cyan-50" width={24} height={24} src="/icons/moon_dark.svg" alt="Dark"/>
+                </span>
               </button>
             )}
             </div>

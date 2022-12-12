@@ -55,7 +55,7 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <div className="relative bg-transparent overflow-hidden">
+      <div className="relative bg-[url('/icons/bg_wave.svg')] overflow-hidden">
         <div className="mx-auto max-w-7xl">
           <Head>
             <title>Fist</title>
@@ -75,12 +75,12 @@ const Home: NextPage = () => {
             <Hero/>
           </div>
         </div>
-        <div className="xl:absolute xl:inset-y-0 xl:right-0 xl:w-1/2 xl:block hidden" data-aos="fade-down">
+        {/* <div className="xl:absolute xl:inset-y-0 xl:right-0 xl:w-1/2 xl:block hidden" data-aos="fade-down">
           <img
             src="https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
             alt="hero"
           />
-        </div>
+        </div> */}
       </div>
       <CompanyClients/>
       <Features/>
