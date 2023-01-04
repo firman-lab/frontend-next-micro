@@ -34,7 +34,7 @@ export default function Features() {
   }, []);
 
   return (
-    <section className="lg:py-12 py-4 scroll-smooth mt-12" id="features">
+    <section className="lg:py-12 py-4 scroll-smooth lg:mt-12" id="features">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center" data-aos="fade-up">
           <h2 className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">

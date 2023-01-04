@@ -1,5 +1,5 @@
-import { Popover, Switch, Transition } from "@headlessui/react";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import { Popover, Transition } from "@headlessui/react";
+import React, { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
@@ -13,7 +13,6 @@ const navigation = [
 interface HeaderProps {
   href: string;
   title: string;
-  // setToggle: () => void;
 }
 
 export default function Header(props: HeaderProps) {
@@ -21,51 +20,21 @@ export default function Header(props: HeaderProps) {
 
   const [enabled, setEnabled] = useState(false);
   const { theme, setTheme } = useTheme();
-  // const [recTheme, setRecTheme] = useRecoilState(darkState);
 
   const changeToggle = () => {
-    // setTheme(theme === 'light' ? 'dark' : 'light');
     if (theme === "light") {
       setTheme("dark");
-      // setRecTheme('dark');
       setEnabled(true);
     } else {
       setTheme("light");
-      // setRecTheme('light');
       setEnabled(false);
     }
-    // setEnabled(theme === 'light' ? false : true);
   };
-  // const [dark, setDark] = useRecoilState(darkState);
 
   useEffect(() => {
     setEnabled(theme === "dark" ? true : false);
     console.log("theme:", theme);
   }, [theme]);
-
-  // const setDarkNow = () => {
-  //   // setEnabled (enabled === false ? true : false);
-  //   // setDark(dark === 'light' ? 'dark' : 'light')
-  //   if(dark === "light"){
-  //     setDark("dark");
-  //     setEnabled(true);
-  //   }else{
-  //     setDark("light");
-  //     setEnabled(false);
-  //   }
-  // }
-
-  // const onReloadTheme= () => {
-  //   if(dark === 'dark'
-  //   // || window.matchMedia('(prefers-color-scheme: dark)').matches
-  //   ){
-  //     document.documentElement.classList.add('dark');
-  //     setEnabled(true);
-  //   }else{
-  //     document.documentElement.classList.remove('dark');
-  //     setEnabled(false);
-  //   }
-  // }
 
   return (
     <Popover>
@@ -74,7 +43,7 @@ export default function Header(props: HeaderProps) {
           className="relative flex items-center justify-between sm:h-10 xl:justify-start"
           aria-label="Globals"
         >
-          <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
+          <div className="flex flex-shrink-0 flex-grow items-center justify-center lg:flex-grow-0">
             <div className="flex w-full items-center justify-between md:w-auto">
               <a href="/">
                 <span className="sr-only">Fist Mousea</span>
@@ -85,7 +54,7 @@ export default function Header(props: HeaderProps) {
                 />
               </a>
               <div className="-mr-2 flex items-center md:hidden">
-                <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <Popover.Button className="inline-flex items-center justify-center rounded-md bg-indigo-200 p-2 text-gray-400 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open mian menu</span>
                   <Image
                     alt="bar-ic"
@@ -98,26 +67,21 @@ export default function Header(props: HeaderProps) {
               </div>
             </div>
           </div>
-          <div className="hidden md:ml-10 md:block md:space-x-8 md:pr-4 my-auto">
+          <div className="hidden md:ml-10 md:flex md:items-center md:space-x-8 md:pr-4 my-auto">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="font-semibold text-gray-500 hover:text-gray-900"
+                className="font-semibold align-middle text-gray-400 hover:text-gray-200"
               >
                 {item.name}
               </a>
             ))}
-            <a
-              href={href}
-              className="font-semibold text-indigo-600 bg-indigo-100 hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md"
-            >
-              {title}
-            </a>
+           
             {enabled === true ? (
               <button
                 onClick={changeToggle}
-                className="bg-indigo-800 text-indigo-800 rounded-xl p-2 text-xs"
+                className="bg-indigo-800 hover:bg-indigo-700 text-indigo-800 rounded-xl p-2 text-xs"
               >
                 <span>
                   <Image className="text-cyan-50" width={24} height={24} src="/icons/sun_light.svg" alt="Dark"/>
@@ -126,26 +90,19 @@ export default function Header(props: HeaderProps) {
             ) : (
               <button
                 onClick={changeToggle}
-                className="bg-indigo-800 text-indigo-200 rounded-xl p-2 text-xs"
+                className="bg-indigo-800 hover:bg-indigo-700 text-indigo-200 rounded-xl p-2 text-xs"
               >
                 <span>
                   <Image className="text-cyan-50" width={24} height={24} src="/icons/moon_dark.svg" alt="Dark"/>
                 </span>
               </button>
             )}
-            {/* <Switch
-              checked={true}
-              onChange={() => {changeToggle()}}
-              className={`${
-                theme === 'dark' ? "bg-indigo-900" : "bg-indigo-400"
-              } mx-4 my-4 inline-flex h-[20px] w-[35px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-            >
-              <span
-                aria-hidden="true"
-                className={`${theme === 'dark' ? "translate-x-4" : "translate-x-0"}
-                  pointer-events-none inline-block h-[16px] w-[16px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
-              />
-            </Switch> */}
+             <a
+              href={href}
+              className="font-semibold text-indigo-600 bg-indigo-100 hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md"
+              >
+              {title}
+            </a>
           </div>
         </nav>
       </div>
@@ -200,7 +157,7 @@ export default function Header(props: HeaderProps) {
               {enabled === true ? (
               <button
                 onClick={changeToggle}
-                className="bg-indigo-800 text-indigo-800 rounded-xl p-2 text-xs"
+                className="bg-indigo-800 hover:bg-indigo-700 text-indigo-800 rounded-xl p-2 text-xs"
               >
                 <span>
                   <Image className="text-cyan-50" width={24} height={24} src="/icons/sun_light.svg" alt="Dark"/>
@@ -209,7 +166,7 @@ export default function Header(props: HeaderProps) {
             ) : (
               <button
                 onClick={changeToggle}
-                className="bg-indigo-800 text-indigo-200 rounded-xl p-2 text-xs"
+                className="bg-indigo-800 hover:bg-indigo-700 text-indigo-200 rounded-xl p-2 text-xs"
               >
                 <span>
                   <Image className="text-cyan-50" width={24} height={24} src="/icons/moon_dark.svg" alt="Dark"/>
